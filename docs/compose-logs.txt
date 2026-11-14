@@ -1,0 +1,42 @@
+shop-db   | 
+shop-db   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+shop-db   | 
+shop-api  | 
+shop-api  |   .   ____          _            __ _ _
+shop-api  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+shop-db   | 2026-11-14 06:36:24.130 UTC [1] LOG:  starting PostgreSQL 16.16 (Debian 16.16-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+shop-db   | 2026-11-14 06:36:24.131 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+shop-db   | 2026-11-14 06:36:24.131 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+shop-db   | 2026-11-14 06:36:24.140 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+shop-db   | 2026-11-14 06:36:24.155 UTC [29] LOG:  database system was shut down at 2026-11-14 06:36:21 UTC
+shop-api  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+shop-api  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+shop-db   | 2026-11-14 06:36:24.170 UTC [1] LOG:  database system is ready to accept connections
+shop-api  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+shop-api  |  =========|_|==============|___/=/_/_/_/
+shop-api  | 
+shop-api  |  :: Spring Boot ::                (v3.3.5)
+shop-api  | 
+shop-api  | 2026-11-14T06:36:33.481Z  INFO 1 --- [shop-api] [           main] com.example.shop.ShopApplication         : Starting ShopApplication v1.0.0 using Java 21.0.13 with PID 1 (/app/app.jar started by root in /app)
+shop-api  | 2026-11-14T06:36:33.490Z  INFO 1 --- [shop-api] [           main] com.example.shop.ShopApplication         : No active profile set, falling back to 1 default profile: "default"
+shop-api  | 2026-11-14T06:36:35.838Z  INFO 1 --- [shop-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+shop-api  | 2026-11-14T06:36:35.987Z  INFO 1 --- [shop-api] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 1 JPA repository interface.
+shop-api  | 2026-11-14T06:36:37.570Z  INFO 1 --- [shop-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+shop-api  | 2026-11-14T06:36:37.611Z  INFO 1 --- [shop-api] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+shop-api  | 2026-11-14T06:36:37.613Z  INFO 1 --- [shop-api] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+shop-api  | 2026-11-14T06:36:37.720Z  INFO 1 --- [shop-api] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+shop-api  | 2026-11-14T06:36:37.725Z  INFO 1 --- [shop-api] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4039 ms
+shop-api  | 2026-11-14T06:36:38.201Z  INFO 1 --- [shop-api] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+shop-api  | 2026-11-14T06:36:38.352Z  INFO 1 --- [shop-api] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+shop-api  | 2026-11-14T06:36:38.459Z  INFO 1 --- [shop-api] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+shop-api  | 2026-11-14T06:36:39.639Z  INFO 1 --- [shop-api] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+shop-api  | 2026-11-14T06:36:39.758Z  INFO 1 --- [shop-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+shop-api  | 2026-11-14T06:36:40.307Z  INFO 1 --- [shop-api] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b211077
+shop-api  | 2026-11-14T06:36:40.312Z  INFO 1 --- [shop-api] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+shop-api  | 2026-11-14T06:36:42.823Z  INFO 1 --- [shop-api] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+shop-api  | 2026-11-14T06:36:42.932Z  INFO 1 --- [shop-api] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+shop-api  | 2026-11-14T06:36:45.082Z  INFO 1 --- [shop-api] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+shop-api  | 2026-11-14T06:36:45.118Z  INFO 1 --- [shop-api] [           main] com.example.shop.ShopApplication         : Started ShopApplication in 13.178 seconds (process running for 15.097)
+shop-api  | 2026-11-14T06:36:46.699Z  INFO 1 --- [shop-api] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+shop-api  | 2026-11-14T06:36:46.700Z  INFO 1 --- [shop-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+shop-api  | 2026-11-14T06:36:46.708Z  INFO 1 --- [shop-api] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms

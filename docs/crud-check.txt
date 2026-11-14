@@ -1,0 +1,46 @@
+=== CREATE ===
+$ curl -X POST http://localhost:8080/products -H 'Content-Type: application/json' -d '{"name":"Mouse M1",...}'
+{"id":1,"name":"Mouse M1","description":"Wireless mouse","price":19.90,"stock":50}
+HTTP 201
+
+=== READ (list) ===
+
+$ curl http://localhost:8080/products
+[{"id":1,"name":"Mouse M1","description":"Wireless mouse","price":19.90,"stock":50}]
+HTTP 200
+
+=== READ (one) ===
+
+$ curl http://localhost:8080/products/1
+{"id":1,"name":"Mouse M1","description":"Wireless mouse","price":19.90,"stock":50}
+HTTP 200
+
+=== UPDATE ===
+
+$ curl -X PUT http://localhost:8080/products/1 -H Content-Type: application/json -d {"name":"Mouse M1","description":"Wireless mouse, black","price":21.50,"stock":45}
+{"id":1,"name":"Mouse M1","description":"Wireless mouse, black","price":21.50,"stock":45}
+HTTP 200
+
+=== DELETE ===
+
+$ curl -X DELETE http://localhost:8080/products/1
+
+HTTP 204
+
+=== READ after delete (ожидается 404) ===
+
+$ curl http://localhost:8080/products/1
+{"timestamp":"2026-11-14T06:36:19.111+00:00","status":404,"error":"Not Found","path":"/products/1"}
+HTTP 404
+
+=== Валидация (ожидается 400) ===
+
+$ curl -X POST http://localhost:8080/products -H Content-Type: application/json -d {"name":"","price":-1,"stock":-5}
+{"timestamp":"2026-11-14T06:36:19.466+00:00","status":400,"error":"Bad Request","path":"/products"}
+HTTP 400
+
+=== CREATE товара, который останется в базе ===
+
+$ curl -X POST http://localhost:8080/products -H Content-Type: application/json -d {"name":"Keyboard K1","description":"Mechanical keyboard","price":79.00,"stock":20}
+{"id":2,"name":"Keyboard K1","description":"Mechanical keyboard","price":79.00,"stock":20}
+HTTP 201

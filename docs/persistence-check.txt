@@ -1,0 +1,35 @@
+$ docker compose down
+ Container shop-api Stopping 
+ Container shop-api Stopped 
+ Container shop-api Removing 
+ Container shop-api Removed 
+ Container shop-db Stopping 
+ Container shop-db Stopped 
+ Container shop-db Removing 
+ Container shop-db Removed 
+ Network shop-api_shop-net Removing 
+ Network shop-api_shop-net Removed 
+
+$ docker compose up -d
+ Network shop-api_shop-net Creating 
+ Network shop-api_shop-net Creating 
+ Network shop-api_shop-net Created 
+ Network shop-api_shop-net Created 
+ Container shop-db Creating 
+ Container shop-db Created 
+ Container shop-api Creating 
+ Container shop-api Created 
+ Container shop-db Starting 
+ Container shop-db Started 
+ Container shop-db Waiting 
+ Container shop-db Healthy 
+ Container shop-api Starting 
+ Container shop-api Started 
+
+$ docker compose ps
+NAME       IMAGE          COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+shop-api   shop-api-api   "java -jar app.jar"      api       25 seconds ago   Up 18 seconds             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+shop-db    postgres:16    "docker-entrypoint.s…"   db        25 seconds ago   Up 24 seconds (healthy)   5432/tcp
+
+$ curl http://localhost:8080/products   (после перезапуска)
+[{"id":2,"name":"Keyboard K1","description":"Mechanical keyboard","price":79.00,"stock":20}]
