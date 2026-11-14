@@ -1,4 +1,4 @@
-# Интернет-магазин «Маркет»: API товаров + PostgreSQL в Docker Compose
+# Интернет-магазин
 
 Контрольная точка: CRUD API на Java (Spring Boot), база PostgreSQL как отдельный сервис Docker Compose, данные хранятся в volume `db_data`.
 
@@ -115,9 +115,3 @@ bash scripts/verify.sh
 4. `curl http://localhost:8080/products` - «Keyboard K1» на месте
 5. `docker compose logs`
 
-## Заметки для защиты
-
-- **Сущность:** Product, основа каталога интернет-магазина.
-- **Почему PostgreSQL:** реляционные данные (товары, потом заказы и пользователи), транзакции, запуск отдельным сервисом. SQLite для этой работы не подходит.
-- **Как API находит базу:** по имени сервиса `db` в сети `shop-net`, параметры передаются через environment.
-- **Что хранит volume `db_data`:** файлы PostgreSQL. Пока volume не удалён (`down -v`), данные остаются.
